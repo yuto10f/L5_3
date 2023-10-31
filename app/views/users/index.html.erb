@@ -1,7 +1,13 @@
 <% @users.each do |a| %>
-    <%= a.uid %>
-    <%= a.pass %>
+    <p>
+    UID:<%= a.uid %>
+    PASS:<%= a.pass %>
     <%= link_to '削除', user_path(a), data: {"turbo-method": :delete} %><br>
-< % end %>
+    </p>
+<% end %>
 
 <%= link_to '新規追加', new_user_path %>
+
+<hr>
+
+<%= link_to 'ツイート一覧', tweets_path %>
