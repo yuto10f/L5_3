@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  root 'users#index'
+  
+  root 'tweets#index'
   
   resources :users
-  
+  resources :tweets
 end

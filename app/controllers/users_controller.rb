@@ -11,12 +11,11 @@ class UsersController < ApplicationController
     upass = BCrypt::Password.create(params[:pass])
     user = User.new(uid: params[:uid],pass: upass)
     user.save
-    redirect_to users_path
+    redirect_to root_path
   end
   
   def destroy
-    user = User.find(params[:id])
-    user.destroy
-    redirect_to '/'
+    User.find(params[:id]).destroy
+    redirect_to root_path
   end
 end
